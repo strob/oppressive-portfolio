@@ -1,0 +1,3 @@
+[submodule "lib/oppressive"]
+	path = lib/oppressive
+	url = https://github.com/strob/oppressive.git
