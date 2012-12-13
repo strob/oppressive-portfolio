@@ -3,6 +3,8 @@ oppressive-portfolio
 hybrid online/offline portfolio site/cms
 
 
+== setup
+modify FTP_ROUTE in pyfolio/main.py for "upload" to work
 
 == building .dmgs on osx
 Modify 'pyfolio.spec' with correct paths, and run from pyinstaller directory
@@ -12,3 +14,8 @@ $ python utils/Build.py /path/to/pyfolio.spec
 this will create a ".app" -- then:
 
 $ hdiutil create --srcdir /path/to/.app PyFolio.dmg
+
+== issues
+
+* the project listing scroll event isn't always instantaneous
+* should be able to set ftp prefs within UI
