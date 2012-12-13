@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>folio</title>
+    <script src="jquery-1.8.2.min.js"></script>
+    <script src="oppressive.js"></script>
+    <script src="folio.js"></script>
+
+    <link rel="stylesheet" href="folio.css" />
+  </head>
+  <body>
+    <div id="home">
+    </div>
+    <div id="column" class="typewriter">
+    </div>
+    <div id="page">
+    </div>
+    <div id="hwrap">
+    <div id="head">
+      <h1><a href="#">folio</a></h1>
+      <div id="menu" class="typewriter">
+         <a href="#/portfolio" id="aportfolio">portfolio</a> | <a href="#/links">links</a>
+      </div>
+    </div>
+    </div>
+    <div id="warning">
+      This site requires <a href="http://getfirefox.com">Javascript</a>.
+    </div>
+    <script>
+$("#warning").hide();
+
+OP.ready(function() {
+    $(window).bind("hashchange", FOLLY.navigate_to_hash);
+    $(window).bind("resize", FOLLY.custom_layout);
+    OP.base = 'json/';
+    OP.Subjectification.load(
+        // XXX: Normalize path
+        {"Project": FOLLY.Project,
+         "Projects": FOLLY.Projects,
+         "Text": FOLLY.Text,
+         "Link": FOLLY.Link,
+         // "Links": FOLLY.Links,
+         "Image": FOLLY.Image},
+        function() {
+            FOLLY.show_portfolio_submenu();
+            FOLLY.navigate_to_hash();
+            FOLLY.custom_layout();
+            var first_project_id = FOLLY.get_projects().projects[0];
+            $("#aportfolio").attr({href:"#/"+first_project_id});
+        });
+});
+    </script>
+  </body>
+</html>
