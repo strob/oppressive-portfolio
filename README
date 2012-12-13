@@ -4,7 +4,20 @@ hybrid online/offline portfolio site/cms
 
 
 == setup
+
+fetch oppressive.js submodule
+
+$ git submodule init
+$ git submodule update
+
 modify FTP_ROUTE in pyfolio/main.py for "upload" to work
+
+and/or
+
+$ cd pyfolio
+$ python2.7 main.py
+
+to open direct-manipulation UI
 
 == building .dmgs on osx
 Modify 'pyfolio.spec' with correct paths, and run from pyinstaller directory
